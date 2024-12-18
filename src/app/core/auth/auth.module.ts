@@ -9,7 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth.guard'; // Ajout du AuthGuard
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [],
   imports: [
     CommonModule,
     FormsModule, // Assurez-vous que FormsModule est importé pour utiliser ngModel
@@ -19,6 +19,6 @@ import { AuthGuard } from './auth.guard'; // Ajout du AuthGuard
     AuthService, // Fournisseur du service d'authentification
     AuthGuard, // Fournisseur du garde de route
   ],
-  exports: [LoginComponent],
+  exports: [],
 })
 export class AuthModule {}

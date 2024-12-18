@@ -1,4 +1,4 @@
-import { AuthService } from './app/core/auth/services/auth.service';
+import { AuthService } from '../../../core/services/auth.service'; // Chemin corrigé
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 

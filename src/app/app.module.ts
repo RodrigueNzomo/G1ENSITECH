@@ -23,7 +23,6 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-
     CoreModule, // Pour les services et gardes
     SharedModule, // Composants réutilisables
     StudentsModule, // Module des étudiants
