@@ -1,0 +1,58 @@
+/* Style global du header */
+.header {
+  background-color: #f8f9fa; /* Couleur de fond neutre */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Légère ombre pour le header */
+  z-index: 10;
+  position: sticky;
+  top: 0;
+}
+
+/* Style pour la barre de navigation */
+.navbar {
+  padding: 0.8rem 1rem;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #007bff; /* Couleur du logo ou du nom */
+  text-decoration: none;
+}
+
+.navbar-brand:hover {
+  color: #0056b3; /* Couleur au survol */
+}
+
+.nav-link {
+  color: #495057; /* Couleur des liens */
+  font-size: 1rem;
+  margin: 0 0.5rem;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #007bff; /* Couleur au survol ou lorsqu'actif */
+  font-weight: bold;
+}
+
+.btn-outline-danger {
+  color: #dc3545; /* Couleur du texte du bouton de déconnexion */
+  border: 1px solid #dc3545;
+  background-color: transparent;
+}
+
+.btn-outline-danger:hover {
+  background-color: #dc3545; /* Fond rouge au survol */
+  color: #fff; /* Texte blanc */
+}
+
+/* Style responsive pour petit écran */
+@media (max-width: 768px) {
+  .navbar .nav-link {
+    margin: 0.5rem 0;
+  }
+
+  .btn-outline-danger {
+    margin-top: 0.5rem;
+  }
+}

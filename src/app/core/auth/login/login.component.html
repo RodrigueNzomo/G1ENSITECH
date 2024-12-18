@@ -1,0 +1,60 @@
+<div class="login-container">
+  <div class="login-form">
+    <h2 class="login-title">Connexion</h2>
+
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      <!-- Champ pour le nom d'utilisateur -->
+      <div class="form-group">
+        <label for="username">Nom d'utilisateur</label>
+        <input
+          type="text"
+          id="username"
+          class="form-control"
+          [(ngModel)]="username"
+          name="username"
+          required
+          #usernameInput="ngModel"
+        />
+        <div
+          *ngIf="usernameInput.invalid && usernameInput.touched"
+          class="error-message"
+        >
+          Le nom d'utilisateur est requis.
+        </div>
+      </div>
+
+      <!-- Champ pour le mot de passe -->
+      <div class="form-group">
+        <label for="password">Mot de passe</label>
+        <input
+          type="password"
+          id="password"
+          class="form-control"
+          [(ngModel)]="password"
+          name="password"
+          required
+          #passwordInput="ngModel"
+        />
+        <div
+          *ngIf="passwordInput.invalid && passwordInput.touched"
+          class="error-message"
+        >
+          Le mot de passe est requis.
+        </div>
+      </div>
+
+      <!-- Bouton de soumission -->
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="loginForm.invalid"
+      >
+        Se connecter
+      </button>
+    </form>
+
+    <div class="signup-link">
+      <p>Pas encore inscrit ? <a routerLink="/signup">Créez un compte</a></p>
+    </div>
+  </div>
+</div>

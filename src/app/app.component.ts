@@ -15,7 +15,7 @@ export class AppComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
   // Déconnexion de l'utilisateur
-  logout() {
+  logout(): void {
     this.authService.logout();
     this.router.navigate(['/login']);
   }

@@ -1,0 +1,15 @@
+/* Pour les messages d'erreur */
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+}
+
+/* Pour les champs invalides */
+input.ng-invalid.ng-touched {
+  border-color: red;
+}
+
+/* Pour les champs valides */
+input.ng-valid.ng-touched {
+  border-color: green;
+}

@@ -5,8 +5,8 @@
   </header>
 
   <!-- Menu latéral visible seulement si l'utilisateur est authentifié -->
-  <nav role="navigation">
-    <app-sidebar *ngIf="authService.isAuthenticated"></app-sidebar>
+  <nav role="navigation" *ngIf="authService.isAuthenticated">
+    <app-sidebar></app-sidebar>
   </nav>
 
   <!-- Contenu principal de l'application -->

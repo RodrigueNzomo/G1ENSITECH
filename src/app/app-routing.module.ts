@@ -4,12 +4,17 @@ import { AuthGuard } from './core/auth/auth.guard';
 import { LoginComponent } from './core/auth/login/login.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' }, // Redirection par défaut
+  {
+    path: '',
+    redirectTo: 'auth/login',
+    pathMatch: 'full',
+  }, // Redirection par défaut
   { path: 'login', component: LoginComponent }, // Route pour le login
+
   {
     path: 'students',
     loadChildren: () =>
-      import('./students/students.module').then((m) => m.StudentsModule), // Chargement Lazy
+      import('./students/students.module').then((m) => m.StudentsModule),
     canActivate: [AuthGuard], // Protéger la route par AuthGuard
   },
   {
@@ -36,7 +41,7 @@ const routes: Routes = [
       import('./statistics/statistics.module').then((m) => m.StatisticsModule),
     canActivate: [AuthGuard],
   },
-  { path: '**', redirectTo: '/login' }, // Redirection des routes non définies
+  { path: '**', redirectTo: 'login' }, // Redirection des routes non définies
 ];
 
 @NgModule({
