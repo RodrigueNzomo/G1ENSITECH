@@ -2,7 +2,8 @@
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, map, Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -15,7 +16,7 @@ export class AuthService {
 
   constructor(private http: HttpClient, private router: Router) {
     this.currentUserSubject = new BehaviorSubject<any>(
-      JSON.parse(localStorage.getItem('currentUser')!)
+      JSON.parse(localStorage.getItem('currentUser') || 'null')
     );
     this.currentUser = this.currentUserSubject.asObservable();
   }
@@ -23,16 +24,18 @@ export class AuthService {
   login(username: string, password: string): Observable<any> {
     return this.http.post<any>(`/api/auth/login`, { username, password }).pipe(
       map((user) => {
-        // Store user details in localStorage to keep user logged in between page refreshes
-        localStorage.setItem('currentUser', JSON.stringify(user));
-        this.currentUserSubject.next(user);
+        // Stocker l'utilisateur dans le localStorage
+        if (user && user.token) {
+          localStorage.setItem('currentUser', JSON.stringify(user));
+          this.currentUserSubject.next(user);
+        }
         return user;
       })
     );
   }
 
-  logout() {
-    // Remove user from local storage and set current user to null
+  logout(): void {
+    // Supprimer l'utilisateur du localStorage et définir l'utilisateur actuel sur null
     localStorage.removeItem('currentUser');
     this.currentUserSubject.next(null);
     this.router.navigate(['/login']);

@@ -10,17 +10,21 @@ import { TeachersModule } from './teachers/teachers.module';
 import { CoursesModule } from './courses/courses.module';
 import { GradesModule } from './grades/grades.module';
 import { StatisticsModule } from './statistics/statistics.module';
+import { HttpClientModule } from '@angular/common/http';
 
 // Composant principal
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './core/auth/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent, // Déclaration du composant principal
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     FormsModule,
     CoreModule, // Pour les services et gardes

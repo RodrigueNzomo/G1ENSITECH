@@ -2,6 +2,11 @@
   <div class="login-form">
     <h2 class="login-title">Connexion</h2>
 
+    <!-- Affichage des erreurs -->
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+
     <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
       <!-- Champ pour le nom d'utilisateur -->
       <div class="form-group">
@@ -53,7 +58,10 @@
       </button>
     </form>
 
-    <div class="signup-link">
+    <div class="options">
+      <p>
+        <a (click)="onResetPassword()">Mot de passe oublié ?</a>
+      </p>
       <p>Pas encore inscrit ? <a routerLink="/signup">Créez un compte</a></p>
     </div>
   </div>
