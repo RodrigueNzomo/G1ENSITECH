@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router'; // Importation du RouterModule
 import { HeaderComponent } from '../components/header/header.component';
 import { FooterComponent } from '../components/footer/footer.component';
 import { SidebarComponent } from '../components/sidebar/sidebar.component';
+import { UserManagementModule } from '../../user-management/user-management.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SidebarComponent } from '../components/sidebar/sidebar.component';
   ],
   imports: [
     CommonModule, // Importation du module CommonModule pour l'utilisation des directives de base
-    RouterModule, // Importation du RouterModule pour utiliser la navigation
+    RouterModule,
+    UserManagementModule,
   ],
   exports: [
     HeaderComponent, // Exportation pour utilisation dans d'autres modules

@@ -1,13 +1,15 @@
-<div class="sidebar">
+<div class="sidebar" [class.open]="isSidebarOpen">
   <div class="sidebar-header">
     <h3>G1Ensitech</h3>
+    <button (click)="toggleSidebar()" class="toggle-btn">
+      <i
+        class="fas"
+        [class.fa-bars]="!isSidebarOpen"
+        [class.fa-times]="isSidebarOpen"
+      ></i>
+    </button>
   </div>
   <ul class="sidebar-menu">
-    <li>
-      <a routerLink="/dashboard" routerLinkActive="active">
-        <i class="fas fa-tachometer-alt"></i> Tableau de bord
-      </a>
-    </li>
     <li>
       <a routerLink="/students" routerLinkActive="active">
         <i class="fas fa-user-graduate"></i> Étudiants
@@ -37,6 +39,8 @@
       <a routerLink="/settings" routerLinkActive="active">
         <i class="fas fa-cogs"></i> Paramètres
       </a>
+      <!-- Section de gestion des utilisateurs -->
+      <app-user-management></app-user-management>
     </li>
   </ul>
 </div>

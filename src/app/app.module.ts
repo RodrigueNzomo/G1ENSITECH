@@ -1,41 +1,33 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 // Importation des modules personnalisés
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared/shared.module';
-import { StudentsModule } from './students/students.module';
-import { TeachersModule } from './teachers/teachers.module';
-import { CoursesModule } from './courses/courses.module';
-import { GradesModule } from './grades/grades.module';
-import { StatisticsModule } from './statistics/statistics.module';
-import { HttpClientModule } from '@angular/common/http';
+import { AuthModule } from './core/auth/auth.module';
+import { UserManagementModule } from './user-management/user-management.module'; // Importez votre module
 
 // Composant principal
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
-import { LoginComponent } from './core/auth/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent, // Déclaration du composant principal
-    LoginComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    UserManagementModule,
     FormsModule,
-    CoreModule, // Pour les services et gardes
-    SharedModule, // Composants réutilisables
-    StudentsModule, // Module des étudiants
-    TeachersModule, // Module des enseignants
-    CoursesModule, // Module des cours
-    GradesModule, // Module des notes
-    StatisticsModule, // Module des statistiques
+    AuthModule, // Module pour l'authentification
+    CoreModule, // Module pour les services globaux
+    SharedModule, // Module pour les composants réutilisables
   ],
-  providers: [], // Pas de services globaux supplémentaires pour le moment
+  providers: [], // Services globaux définis dans CoreModule
   bootstrap: [AppComponent], // Composant de démarrage de l'application
 })
 export class AppModule {}

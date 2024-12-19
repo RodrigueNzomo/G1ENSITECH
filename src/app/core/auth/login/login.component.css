@@ -1,15 +1,119 @@
-/* Pour les messages d'erreur */
+/* Conteneur principal */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px;
+  background-image: url("/assets/image/Ensietch.jpeg"); /* Arrière-plan général */
+  background-size: cover; /* Couvre toute la surface du conteneur */
+  background-position: center; /* Centre l'image */
+  position: relative; /* Positionnement relatif pour superposer le formulaire */
+}
+
+/* Logo de l'école (en dehors du formulaire) */
+.school-logo {
+  width: 150px;
+  margin-bottom: 20px;
+  position: absolute;
+  top: 20px; /* Position du logo au-dessus du formulaire */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Formulaire de connexion avec image de fond */
+.login-form {
+  background-color: rgba(236, 237, 243, 0.8); /* Fond semi-transparent */
+  border-radius: 10px;
+  box-shadow: 6px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  z-index: 2; /* Assure que le formulaire est au-dessus de l'image */
+}
+
+/* Titre du formulaire */
+.login-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #254fc2; /* Couleur bleue du titre */
+}
+
+/* Champs de saisie */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+  color: #5035ec; /* Couleur violette des champs */
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: hsl(258, 88%, 42%); /* Couleur des labels */
+}
+
+input {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 14px;
+  border: 1px solid hsl(192, 62%, 80%);
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: hsl(251, 100%, 50%); /* Couleur au focus */
+}
+
+/* Bouton de soumission */
+.btn {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  color: hsl(257, 19%, 93%);
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:disabled {
+  background-color: #3607b8;
+  cursor: not-allowed;
+}
+
+.btn:hover:not(:disabled) {
+  background-color: hsl(211, 100%, 35%);
+}
+
+/* Messages d'erreur */
 .error-message {
-  color: red;
-  font-size: 0.9rem;
+  font-size: 15px;
+  color: #e74c3c;
+  margin-top: 10px;
 }
 
-/* Pour les champs invalides */
-input.ng-invalid.ng-touched {
-  border-color: red;
+/* Options en bas du formulaire */
+.options {
+  margin-top: 20px;
+  font-size: 14px;
+  color: rgb(49, 17, 231);
 }
 
-/* Pour les champs valides */
-input.ng-valid.ng-touched {
-  border-color: green;
+.options a {
+  color: #db1414;
+  text-decoration: none; /* Retrait de la décoration verte */
+  transition: color 0.3s;
+}
+
+.options a:hover {
+  color: hsl(0, 100%, 35%);
 }

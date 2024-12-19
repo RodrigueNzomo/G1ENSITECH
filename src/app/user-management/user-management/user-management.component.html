@@ -1,0 +1,34 @@
+<!-- src/app/user-management/user-management.component.html -->
+<div class="user-management-container">
+  <h2>Gestion des utilisateurs</h2>
+  <table class="user-table">
+    <thead>
+      <tr>
+        <th>Nom d'utilisateur</th>
+        <th>Email</th>
+        <th>Rôle</th>
+        <th>Changer le rôle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.role }}</td>
+        <td>
+          <select
+            [(ngModel)]="user.role"
+            (change)="onChangeRole(user.username, user.role)"
+            [ngClass]="{
+              'role-changed': user.role !== initialRoles[user.username]
+            }"
+          >
+            <option *ngFor="let role of availableRoles" [value]="role">
+              {{ role }}
+            </option>
+          </select>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

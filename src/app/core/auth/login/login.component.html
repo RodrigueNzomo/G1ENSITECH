@@ -28,6 +28,26 @@
         </div>
       </div>
 
+      <!-- Champ pour l'email -->
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          class="form-control"
+          [(ngModel)]="email"
+          name="email"
+          required
+          #emailInput="ngModel"
+        />
+        <div
+          *ngIf="emailInput.invalid && emailInput.touched"
+          class="error-message"
+        >
+          L'email est requis et doit être valide.
+        </div>
+      </div>
+
       <!-- Champ pour le mot de passe -->
       <div class="form-group">
         <label for="password">Mot de passe</label>

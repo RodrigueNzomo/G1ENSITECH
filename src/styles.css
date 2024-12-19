@@ -34,13 +34,13 @@ app-root {
 
 /* === Header === */
 header {
-  background-color: #007bff;
+  background-color: rgb(18, 102, 228);
   color: #fff;
   padding: 1rem;
   text-align: center;
   font-weight: bold;
   font-size: 1.25rem;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 5px rgba(146, 133, 133, 0.1);
 }
 
 /* === Sidebar === */
@@ -87,7 +87,7 @@ footer {
 
 /* === Buttons === */
 button {
-  background-color: #007bff;
+  background-color: #d3161f;
   color: #fff;
   border: none;
   padding: 0.5rem 1rem;
@@ -97,7 +97,7 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: hsl(212, 44%, 77%);
 }
 
 /* === Forms === */
@@ -115,7 +115,7 @@ input:focus,
 select:focus,
 textarea:focus {
   outline: none;
-  border-color: #007bff;
+  border-color: #becfe0;
 }
 
 /* === Tables === */
@@ -133,7 +133,7 @@ table td {
 }
 
 table th {
-  background-color: #007bff;
+  background-color: hwb(212 78% 8%);
   color: #fff;
 }
 
